@@ -12,7 +12,7 @@ SupportMe::Application.routes.draw do
 
   get 'dashboard' => 'site#dashboard', as: :dashboard
   get 'support' => 'site#support', as: :support
-  get 'connect' => 'site#connect', as: :connect
+  match 'connect' => 'site#connect', via: [ :get, :post ], as: :connect
 
   match 'callback' => 'site#callback', via: [ :get, :post ], as: :callback
 
