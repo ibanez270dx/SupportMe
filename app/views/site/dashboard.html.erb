@@ -17,6 +17,13 @@
       <% else %>
         <%= link_to 'Enable', user_anonymity_path(do: 'enable'), class: "btn btn-info" %>
       <% end %>
+
+      <hr />
+      <h3>Interests</h3>
+      <% if current_user.interests.empty? %>
+        You haven't added any interests. Add some below!
+      <% else %>
+      <% end %>
     </div>
   </div>
 </div>

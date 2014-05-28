@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20140528063856) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "interests_users", force: true do |t|
+    t.integer "user_id"
+    t.integer "interest_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -28,11 +33,6 @@ ActiveRecord::Schema.define(version: 20140528063856) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.boolean  "verified",        default: false
-  end
-
-  create_table "users_interests", force: true do |t|
-    t.integer "user_id"
-    t.integer "interest_id"
   end
 
 end
