@@ -3,8 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  # $('input#interest_name').autocomplete
-  #   source: '/interests'
-  #   response: (event, ui) ->
-  #     console.log "event: ", event
-  #     console.log "ui: ", ui
+  $('input#interest_name, input#interest').autocomplete
+    source: '/interests'

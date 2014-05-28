@@ -10,7 +10,7 @@ class InterestsController < ApplicationController
   end
 
   def list
-    render json: { terms: Interest.where("name like ?", "#{params[:term]}%") }
+    render json: Interest.where("name like ?", "#{params[:term]}%").collect(&:name)
   end
 
 end
