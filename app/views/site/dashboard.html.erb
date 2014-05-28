@@ -1,3 +1,22 @@
 <div class="container">
   <h1>Dashboard</h1>
+  <% unless @user.verified? %>
+    <div class="alert bg-danger">
+      You need to verify your phone number before continuing.
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6 get-support-container">
+      <a href="#" class="btn btn-primary btn-lg btn-block">Get Support</a>
+    </div>
+    <div class="col-md-6 account-options-container">
+      <label>Anonymity</label>
+      <% if current_user.anonymous? %>
+        <%= link_to 'Disable', user_anonymity_path(do: 'disable'), class: "btn btn-info" %>
+      <% else %>
+        <%= link_to 'Enable', user_anonymity_path(do: 'enable'), class: "btn btn-info" %>
+      <% end %>
+    </div>
+  </div>
 </div>

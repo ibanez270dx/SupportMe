@@ -29,4 +29,35 @@ body {
     border:1px solid #b94a48;
   }
 
+  ////////////////////////////////////////////////
+  // Misc
+  ////////////////////////////////////////////////
+
+  div.navbar-login {
+    float: right;
+    margin-top: 14px;
+    ul {
+      margin: 0px;
+      li {
+        margin-left: 10px;
+        display: inline-block;
+        color: #fff;
+        a { color: #999; }
+      }
+    }
+  }
+
+  div.get-support-container {
+    a {
+      font-size: 40px;
+    }
+  }
+
+  div.account-options-container {
+    text-align: right;
+    label {
+      margin-right: 10px;
+    }
+  }
+
 }
