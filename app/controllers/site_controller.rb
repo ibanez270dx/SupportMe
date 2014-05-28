@@ -21,6 +21,9 @@ class SiteController < ApplicationController
   end
 
   def callback
+    Rails.logger.debug "=========================================================================="
+    Rails.logger.debug request.inspect
+    Rails.logger.debug "=========================================================================="
   end
 
 end
