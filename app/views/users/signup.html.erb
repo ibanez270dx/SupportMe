@@ -1,0 +1,6 @@
+
+<div class="container">
+  <%= form_for @user, url: signup_path, html: { class: 'signup' } do |f| %>
+    <%= render partial: "form", formats: [:html], locals: { f: f } %>
+  <% end %>
+</div>
