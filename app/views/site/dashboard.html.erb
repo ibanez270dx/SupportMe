@@ -2,7 +2,7 @@
   <h1>Dashboard</h1>
   <% unless @user.verified? %>
     <div class="alert bg-danger">
-      You need to verify your phone number before continuing.
+      You need to verify your phone number before continuing. <%= link_to 'Verify Now', send_verification_path %>
     </div>
   <% end %>
 

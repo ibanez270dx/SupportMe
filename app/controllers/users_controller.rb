@@ -47,8 +47,24 @@ class UsersController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def verify_phone
+  def send_verification
+    token = Digest::SHA1.hexdigest([Time.now, rand].join)
+    current_user.token = token
+    current_user.save
+    NEXMO.send_message!(
+      to: current_user.phone,
+      from: '12134657508',
+      text: "Click the link to verify your phone number with Support.Me http://humani.se:3000/verify/#{token} " )
+  end
 
+  def receive_verification
+    user = User.find_by_token(parms[:token])
+    if user
+      user.verified = true
+      user.save
+    end
+
+    render text: 'Your phone is now verified!'
   end
 
   private

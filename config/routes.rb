@@ -12,4 +12,6 @@ SupportMe::Application.routes.draw do
 
   get 'dashboard' => 'site#dashboard', as: :dashboard
 
+  get 'verify/send' => 'users#send_verification', as: :send_verification
+  get 'verify/:token' => 'users#receive_verification', as: :receive_verification
 end
