@@ -13,7 +13,7 @@ class SiteController < ApplicationController
   end
 
   def connect
-    interest = Interest.find(params[:interest])
+    interest = Interest.find_by_name(params[:interest])
     if interest
       user = interest.users.first
 
