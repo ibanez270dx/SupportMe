@@ -26,6 +26,7 @@ class SiteController < ApplicationController
       current_user_name = current_user.anonymous? ? "anonymous" : current_user.name
 
       NEXMO.send_message!(to: sponsee.phone, from: '12134657508', text: "Initialized chat with #{current_user_name} for support with #{interest.name}")
+      sleep(2)
       NEXMO.send_message!(to: current_user.phone, from: '12134657508', text: "Initialized chat with #{sponsee_name} for support with #{interest.name}")
     end
   end
