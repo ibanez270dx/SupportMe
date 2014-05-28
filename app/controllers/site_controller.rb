@@ -16,7 +16,7 @@ class SiteController < ApplicationController
     interest = Interest.find(params[:interest])
     if interest
       user = interest.users.first
-      NEXMO.send_message!(to: user.phone, from: '12134657508', "Initialized chat with #{current_user.name}")
+      NEXMO.send_message!(to: user.phone, from: '12134657508', text: "Initialized chat with #{current_user.name}")
     end
   end
 
