@@ -15,16 +15,18 @@ class SiteController < ApplicationController
   def connect
     interest = Interest.find_by_name(params[:interest])
     if interest
-      user = interest.users.first
+      sponsee = interest.users.first
+      sponsee.connected_to = current_user.phone
+      sponsee.save
 
-      user.connected_to = current_user.phone
-      user.save
-
-      current_user.connected_to = user.phone
+      current_user.connected_to = sponsee.phone
       current_user.save
 
-      NEXMO.send_message!(to: user.phone, from: '12134657508', text: "Initialized chat with #{current_user.name}")
-      NEXMO.send_message!(to: current_user.phone, from: '12134657508', text: "Initialized chat with #{user.name}")
+      sponsee_name = sponsee.anonymous? ? "anonymous" : sponsee.name
+      current_user_name = current_user.anonymous? ? "anonymous" : current_user.name
+
+      NEXMO.send_message!(to: sponsee.phone, from: '12134657508', text: "Initialized chat with #{current_user_name}")
+      NEXMO.send_message!(to: current_user.phone, from: '12134657508', text: "Initialized chat with #{sponsee_name}")
     end
   end
 

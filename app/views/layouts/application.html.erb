@@ -36,7 +36,7 @@
         <% else %>
           <div class="navbar-login">
             <ul>
-              <li><%= current_user.name %></li>
+              <li><%= link_to current_user.name, dashboard_path, class: 'white' %></li>
               <li><%= link_to 'Log out', logout_path %></li>
             </ul>
           </div>
