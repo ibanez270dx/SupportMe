@@ -21,7 +21,6 @@ class SiteController < ApplicationController
   end
 
   def callback
-    render text: 'callback!'
   end
 
 end
