@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def receive_verification
-    user = User.find_by_token(parms[:token])
+    user = User.find_by_token(params[:token])
     if user
       user.verified = true
       user.save
