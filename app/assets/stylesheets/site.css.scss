@@ -86,4 +86,12 @@ body {
       margin-right: auto;
     }
   }
+
+  div.jumbotron {
+    background-image: url('bg.jpg');
+  }
+
+  a.white {
+    color: #fff !important;
+  }
 }
