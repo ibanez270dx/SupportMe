@@ -47,6 +47,10 @@ class UsersController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def verify_phone
+
+  end
+
   private
 
     def user_params

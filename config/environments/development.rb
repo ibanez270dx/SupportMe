@@ -33,4 +33,6 @@ SupportMe::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  NEXMO = Nexmo::Client.new('efb0ec70', 'b3753ec8')
 end

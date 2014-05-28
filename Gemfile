@@ -11,6 +11,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'nexmo'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.0'
 
