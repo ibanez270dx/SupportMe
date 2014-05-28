@@ -54,7 +54,7 @@ class UsersController < ApplicationController
     NEXMO.send_message!(
       to: current_user.phone,
       from: '12134657508',
-      text: "Click the link to verify your phone number with Support.Me http://humani.se:3000/verify/#{token} " )
+      text: "Click the link to verify your phone number with Support.Me http://humani.se:3000/verify/#{token}/ ... DO IT " )
   end
 
   def receive_verification
