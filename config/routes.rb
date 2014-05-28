@@ -11,6 +11,10 @@ SupportMe::Application.routes.draw do
   get 'interests' => 'interests#list', as: :interests
 
   get 'dashboard' => 'site#dashboard', as: :dashboard
+  get 'support' => 'site#support', as: :support
+  get 'connect' => 'site#connect', as: :connect
+
+  match 'callback' => 'site#callback', via: [ :get, :post ], as: :callback
 
   get 'verify/send' => 'users#send_verification', as: :send_verification
   get 'verify/:token' => 'users#receive_verification', as: :receive_verification
