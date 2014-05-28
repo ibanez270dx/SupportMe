@@ -23,6 +23,16 @@
       <% if current_user.interests.empty? %>
         You haven't added any interests. Add some below!
       <% else %>
+        <% current_user.interests.each do |interest| %>
+          <span class="interest"><%= interest.name %></span>
+        <% end %>
+      <% end %>
+
+      <%= form_for :interest, url: add_interest_path, html: { class: 'interest-form' } do |f| %>
+        <div class="form-group">
+          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.submit 'Add', class: 'btn btn-info' %>
+        </div>
       <% end %>
     </div>
   </div>

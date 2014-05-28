@@ -60,4 +60,20 @@ body {
     }
   }
 
+  form.interest-form {
+    margin-top: 10px;
+    .form-group {
+      text-align: right;
+      input {
+        max-width: 100px;
+        display: inline-block;
+      }
+    }
+  }
+
+  span.interest {
+    padding: 4px;
+    background-color: #c8e5bc;
+    border: 1px solid #b2dba1;
+  }
 }

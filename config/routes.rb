@@ -7,6 +7,9 @@ SupportMe::Application.routes.draw do
   get 'logout' => 'users#logout', as: :logout
   get 'user/anonymity' => 'users#toggle_anonymity', as: :user_anonymity
 
+  post 'interest/add' => 'interests#add', as: :add_interest
+  get 'interests' => 'interests#list', as: :interests
+
   get 'dashboard' => 'site#dashboard', as: :dashboard
 
 end
