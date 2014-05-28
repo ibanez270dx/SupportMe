@@ -1,6 +1,6 @@
 <div class="container connect-for-support">
   <h1>What would you like support with?</h1>
-  <%= form_tag '/connect' do %>
+  <%= form_tag connect_path do %>
     <%= text_field_tag 'interest', nil, class: 'form-control' %>
     <%= submit_tag 'Get Connected', class: 'btn btn-primary btn-lg' %>
   <% end %>
