@@ -17,6 +17,9 @@ class UsersController < ApplicationController
     if @user = User.find_by_email(params[:user][:email])
       if @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
+        Rails.logger.debug "===================================================================="
+        Rails.logger.debug " dashboard_path: #{dashboard_path}"
+        Rails.logger.debug "===================================================================="
         redirect_to dashboard_path
       else
         flash[:error] = "Your password is incorrect."
