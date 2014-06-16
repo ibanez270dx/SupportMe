@@ -1,6 +1,6 @@
 SupportMe::Application.routes.draw do
 
-  root to: 'site#index', as: :home
+  get '/' => 'site#index', as: :home
 
   match 'signup' => 'users#signup', via: [ :get, :post ], as: :signup
   post 'login' => 'users#login', as: :login
