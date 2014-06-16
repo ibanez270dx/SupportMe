@@ -20,6 +20,8 @@ class UsersController < ApplicationController
         Rails.logger.debug "===================================================================="
         Rails.logger.debug " dashboard_path: #{dashboard_path}"
         Rails.logger.debug "===================================================================="
+        Rails.logger.debug " request: #{request.inspect}"
+        Rails.logger.debug "===================================================================="
         redirect_to dashboard_path
       else
         flash[:error] = "Your password is incorrect."
